@@ -4,98 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href='../static/css/style.css'>
   <title>User Signup</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-      label {
-        cursor: pointer;
-      }
-      .error {
-        color: red;
-      }
-      body {
-        font-family: 'Poppins', sans-serif;
-        background: #f2f2f2;
-      }
-      h1 {
-        color: rgba(26, 98, 199, 1)
-      }
-      .container {
-        height: 90vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .btn {
-        border-radius: 20px;
-        width: 150px;
-        height: 40px;
-        font-size: 1.2rem;
-        font-weight: bold;
-        padding: 10px 15px;
-        border: none;
-        cursor: pointer;
-        color: white;
-       
-        
-        background : -moz-linear-gradient(98.05% 4.97% -152.89deg,rgba(46, 126, 255, 1) 0.56%,rgba(26, 98, 199, 1) 45.6%,rgba(0, 61, 127, 1) 100%);
-        background : -webkit-linear-gradient(-152.89deg, rgba(46, 126, 255, 1) 0.56%, rgba(26, 98, 199, 1) 45.6%, rgba(0, 61, 127, 1) 100%);
-        background : -webkit-gradient(linear,98.05% 4.97% ,3.52% 93.55% ,color-stop(0.0056,rgba(46, 126, 255, 1) ),color-stop(0.456,rgba(26, 98, 199, 1) ),color-stop(1,rgba(0, 61, 127, 1) ));
-        background : -o-linear-gradient(-152.89deg, rgba(46, 126, 255, 1) 0.56%, rgba(26, 98, 199, 1) 45.6%, rgba(0, 61, 127, 1) 100%);
-        background : -ms-linear-gradient(-152.89deg, rgba(46, 126, 255, 1) 0.56%, rgba(26, 98, 199, 1) 45.6%, rgba(0, 61, 127, 1) 100%);
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#2E7EFF', endColorstr='#003D7F' ,GradientType=0)";
-        background : linear-gradient(242.89deg, rgba(46, 126, 255, 1) 0.56%, rgba(26, 98, 199, 1) 45.6%, rgba(0, 61, 127, 1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2E7EFF',endColorstr='#003D7F' , GradientType=1);
-        /* background : -moz-linear-gradient(98.05% 4.97% -152.89deg,rgba(46, 126, 255, 1) 0.56%,rgba(26, 98, 199, 1) 45.6%,rgba(0, 61, 127, 1) 100%);
-        background : -webkit-linear-gradient(-152.89deg, rgba(46, 126, 255, 1) 0.56%, rgba(26, 98, 199, 1) 45.6%, rgba(0, 61, 127, 1) 100%);
-        background : -webkit-gradient(linear,98.05% 4.97% ,3.52% 93.55% ,color-stop(0.0056,rgba(46, 126, 255, 1) ),color-stop(0.456,rgba(26, 98, 199, 1) ),color-stop(1,rgba(0, 61, 127, 1) ));
-        background : -o-linear-gradient(-152.89deg, rgba(46, 126, 255, 1) 0.56%, rgba(26, 98, 199, 1) 45.6%, rgba(0, 61, 127, 1) 100%);
-        background : -ms-linear-gradient(-152.89deg, rgba(46, 126, 255, 1) 0.56%, rgba(26, 98, 199, 1) 45.6%, rgba(0, 61, 127, 1) 100%);
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#2E7EFF', endColorstr='#003D7F' ,GradientType=0)";
-        background : linear-gradient(242.89deg, rgba(46, 126, 255, 1) 0.56%, rgba(26, 98, 199, 1) 45.6%, rgba(0, 61, 127, 1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2E7EFF',endColorstr='#003D7F' , GradientType=1); */
-      }
-      .btn:hover {
-        color:#f2f2f2;
-        font-size: 1.25rem;
-        transition: 350ms;
-        background : -moz-linear-gradient(100.55% 11.72% -152.89deg,rgba(243, 69, 239, 1) 0.56%,rgba(247, 76, 183, 1) 33.87%,rgba(255, 92, 63, 1) 100%);
-        background : -webkit-linear-gradient(-152.89deg, rgba(243, 69, 239, 1) 0.56%, rgba(247, 76, 183, 1) 33.87%, rgba(255, 92, 63, 1) 100%);
-        background : -webkit-gradient(linear,100.55% 11.72% ,1.11% 87.03% ,color-stop(0.0056,rgba(243, 69, 239, 1) ),color-stop(0.3387,rgba(247, 76, 183, 1) ),color-stop(1,rgba(255, 92, 63, 1) ));
-        background : -o-linear-gradient(-152.89deg, rgba(243, 69, 239, 1) 0.56%, rgba(247, 76, 183, 1) 33.87%, rgba(255, 92, 63, 1) 100%);
-        background : -ms-linear-gradient(-152.89deg, rgba(243, 69, 239, 1) 0.56%, rgba(247, 76, 183, 1) 33.87%, rgba(255, 92, 63, 1) 100%);
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#F345EF', endColorstr='#FF5C3F' ,GradientType=0)";
-        background : linear-gradient(242.89deg, rgba(243, 69, 239, 1) 0.56%, rgba(247, 76, 183, 1) 33.87%, rgba(255, 92, 63, 1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F345EF',endColorstr='#FF5C3F' , GradientType=1);
-        
-      }
-      .button {
-        display: flex;
-        justify-content: center;
-      }
-
-    </style>
 </head>
 <body>
   <div class="container">
       <h1>Signup</h1>
   </br>
-  <form method="POST">
+  <form action="/sign_up" method="POST">
     <table>
       <tbody>
-        <tr>
-          <td>
-              
-          </td>
-        </tr>
         <tr>
           <td>
             <label for="username">Username:<span>&nbsp;</span></label>
           </td>
           <td>
-            <input type="text" name="username" id="username">
-            <span class="error"></span>
+            <input type="text" name="username" id="username" value='{{username}}'>
+            <span class="error">{{username_error}}</span>
           </td>
         </tr>
         <tr>
@@ -103,17 +28,17 @@
             <label for="password">Password:<span>&nbsp;</span></label>
           </td>
           <td>
-            <input type="password" name="password" id="password">
-            <span class="error"></span>
+            <input type="password" name="password" id="password" value='{{password}}'>
+            <span class="error">{{password_error}}</span>
           </td>
         </tr>
         <tr>
             <td>
-              <label for="verify">Confirm Password:<span>&nbsp;</span></label>
+              <label for="ver">Confirm Password:<span>&nbsp;</span></label>
             </td>
             <td>
-              <input type="password" name="password" id="verify">
-              <span class="error"></span>
+              <input type="password" name="ver" id="ver" value='{{ver}}'>
+              <span class="error">{{ver_error}}</span>
             </td>
           </tr>
           <tr>
@@ -121,13 +46,12 @@
                 <label for="email">Email (Optional):<span>&nbsp;</span></label>
               </td>
               <td>
-                <input name="email" id="email">
-                <span class="error"></span>
+                <input type="text" name="email" id="email" value='{{email}}'>
+                <span class="error">{{email_error}}</span>
               </td>
             </tr>
       </tbody>
     </table>
-    
   </br>
   </br>
   </br>
@@ -135,8 +59,6 @@
     <input class="btn" type="submit">
     </div>
   </form>
-
   </div>
-  
 </body>
 </html>
